@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  WeatherForecast:
-    image: mocksystem
-    container_name: mocksystem
+  motioncollisionweatherforecast:
+    image: motioncollisionweatherforecast
+    container_name: motioncollisionweatherforecast
     build:
       context: .
       dockerfile: Dockerfile
