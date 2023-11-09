@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  WeatherForecast:
+    image: mocksystem
+    container_name: mocksystem
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5080:80"
