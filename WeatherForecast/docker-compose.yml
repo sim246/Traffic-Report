@@ -1,11 +1,10 @@
 version: '3.8'
 
 services:
-  motioncollisionweatherforecast:
-    image: motioncollisionweatherforecast
-    container_name: motioncollisionweatherforecast
+  weatherforecast:
+    image: weatherforecast
+    container_name: weatherforecast
     build:
-      context: .
       dockerfile: Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

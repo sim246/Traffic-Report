@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  motioncollision:
+    image: motioncollision
+    container_name: motioncollision
+    build:
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5081:80"
