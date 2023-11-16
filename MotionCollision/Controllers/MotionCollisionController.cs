@@ -82,7 +82,7 @@ namespace web_api.Controllers
         private string CapturePicture()
         {
                 // Create a new image capture handler
-                using (var imgCaptureHandler = new ImageStreamCaptureHandler("/path/to/save/image.jpg", "jpg"))
+                using (var imgCaptureHandler = new ImageStreamCaptureHandler("../image.jpg", "jpg"))
                 {
                     // Take a picture
                     camera.TakePicture(imgCaptureHandler, MMALEncoding.JPEG, MMALEncoding.I420);
