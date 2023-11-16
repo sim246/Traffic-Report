@@ -7,8 +7,6 @@ public class MotionCollision
     public string PostalCode { get; set; }
     
     public Detection theDetection { get; set; }
-    
-    public string Picture { get; set; }
 }
 
 public class Detection

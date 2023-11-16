@@ -1,6 +1,8 @@
 using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Mvc;
 
+
+//http://10.172.25.216:5080/WeatherForecast
 namespace web_api.Controllers
 {
   [ApiController]
@@ -28,7 +30,6 @@ namespace web_api.Controllers
     [ProducesResponseType(typeof(IEnumerable<WeatherForecast>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
-    [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
     [Produces("application/json")]
     public ActionResult<Object> Get()
     {
@@ -37,15 +38,22 @@ namespace web_api.Controllers
       var condition = GetRandomCondition();
       var conditionIntensity = GetConditionIntensity(condition);
       var date = DateOnly.FromDateTime(DateTime.Now);
-
-      return new WeatherForecast
-      {
-        PostalCode = postalCode,
-        Temperature = temperature,
-        Type = condition,
-        Intensity = conditionIntensity,
-        Date = date
-      };
+      try {
+        if (postalCode != null ){
+          return Ok(new WeatherForecast
+          {
+            PostalCode = postalCode,
+            Temperature = temperature,
+            Type = condition,
+            Intensity = conditionIntensity,
+            Date = date
+          });
+        } else {
+          return BadRequest("WeatherForecast data not found");
+        }
+      } catch(Exception e) {
+        return BadRequest("WeatherForecast data invalid: " + e.Message);
+      }
     }
 
     private string GetRandomPostalCode()
