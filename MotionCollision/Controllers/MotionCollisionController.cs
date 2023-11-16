@@ -5,11 +5,11 @@ using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using RaspberryPi.NetStandard;
-using RaspberryPi.NetStandard.Cameras;
-using RaspberryPi.NetStandard.Cameras.MMAL;
+using MMALSharp;
+using MMALSharp.Common.Utility;
+using MMALSharp.Components;
+using MMALSharp.Handlers;
 
-//dotnet add package RaspberryPi.NetStandard
 namespace web_api.Controllers
 {
     [ApiController]
@@ -20,14 +20,13 @@ namespace web_api.Controllers
         private readonly string[] Types = { "motion", "collision" };
 
         private readonly ILogger<CollisionSensorController> _logger;
-        private readonly Camera _camera;
 
         public CollisionSensorController(ILogger<CollisionSensorController> logger)
         {
             _logger = logger;
 
-            // Initialize the Raspberry Pi camera
-            _camera = new MMALCamera();
+            // Initialize MMALSharp
+            MMALCamera.ConfigureCameraSettings();
         }
 
         [HttpGet(Name = "GetMotionCollision")]
@@ -69,13 +68,11 @@ namespace web_api.Controllers
 
         private void CapturePicture(string fileName)
         {
-            // Capture a picture using the Raspberry Pi camera
-            using (var capture = _camera.Capture())
+            // Capture a picture using the Raspberry Pi camera (MMALSharp)
+            using (var captureHandler = new ImageStreamCaptureHandler(fileName, MMALEncoding.JPEG))
             {
-                using (var stream = new FileStream(fileName, FileMode.Create))
-                {
-                    capture.Save(stream, ImageFormat.Jpeg);
-                }
+                MMALCamera.Instance.TakePicture(captureHandler, MMALEventType.MMAL_EVENT_TIMEOUT);
+                captureHandler.Wait();
             }
         }
 
