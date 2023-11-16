@@ -1,16 +1,25 @@
 {
   "version": 2,
-  "dgSpecHash": "JHN2YF1j9hqbDwvrwOqO4sV94L22NA4SDnSpU0JPy7Lrha9JNmmg4lOfDX1vmEfuVGzqH33GLqPPRjdoFXJZhA==",
+  "dgSpecHash": "d/tRCsVSjbHuio32kYAasDBMEwktE8TSJi81PPPQ8w14nnhdd0bmz9s1zA4Mg4JmQEoHEPF8cMpruigVBO1EpA==",
   "success": true,
   "projectFilePath": "/home/sim2133009/Labs/team-assignment-2/MotionCollision/web_api_motioncollision.csproj",
   "expectedPackageFiles": [
     "/home/sim2133009/.nuget/packages/microsoft.aspnetcore.openapi/7.0.11/microsoft.aspnetcore.openapi.7.0.11.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/sim2133009/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.0/microsoft.extensions.logging.abstractions.3.1.0.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/microsoft.netcore.platforms/3.1.0/microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "/home/sim2133009/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/mmalsharp/0.6.0/mmalsharp.0.6.0.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/mmalsharp.common/0.6.0/mmalsharp.common.0.6.0.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/mmalsharp.processing/0.6.0/mmalsharp.processing.0.6.0.nupkg.sha512",
     "/home/sim2133009/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "/home/sim2133009/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "/home/sim2133009/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
-    "/home/sim2133009/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+    "/home/sim2133009/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/system.drawing.common/4.7.0/system.drawing.common.4.7.0.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/system.numerics.vectors/4.4.0/system.numerics.vectors.4.4.0.nupkg.sha512"
   ],
   "logs": []
 }

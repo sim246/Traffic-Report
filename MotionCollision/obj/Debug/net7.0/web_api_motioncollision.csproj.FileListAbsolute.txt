@@ -32,3 +32,11 @@
 /home/sim2133009/Labs/team-assignment-2/MotionCollision/obj/Debug/net7.0/web_api_motioncollision.pdb
 /home/sim2133009/Labs/team-assignment-2/MotionCollision/obj/Debug/net7.0/web_api_motioncollision.genruntimeconfig.cache
 /home/sim2133009/Labs/team-assignment-2/MotionCollision/obj/Debug/net7.0/ref/web_api_motioncollision.dll
+/home/sim2133009/Labs/team-assignment-2/MotionCollision/bin/Debug/net7.0/Microsoft.Win32.SystemEvents.dll
+/home/sim2133009/Labs/team-assignment-2/MotionCollision/bin/Debug/net7.0/MMALSharp.dll
+/home/sim2133009/Labs/team-assignment-2/MotionCollision/bin/Debug/net7.0/MMALSharp.Common.dll
+/home/sim2133009/Labs/team-assignment-2/MotionCollision/bin/Debug/net7.0/MMALSharp.Processing.dll
+/home/sim2133009/Labs/team-assignment-2/MotionCollision/bin/Debug/net7.0/System.Drawing.Common.dll
+/home/sim2133009/Labs/team-assignment-2/MotionCollision/bin/Debug/net7.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+/home/sim2133009/Labs/team-assignment-2/MotionCollision/bin/Debug/net7.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+/home/sim2133009/Labs/team-assignment-2/MotionCollision/bin/Debug/net7.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
