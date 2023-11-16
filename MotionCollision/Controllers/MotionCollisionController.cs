@@ -9,6 +9,7 @@ using RaspberryPi.NetStandard;
 using RaspberryPi.NetStandard.Cameras;
 using RaspberryPi.NetStandard.Cameras.MMAL;
 
+//dotnet add package RaspberryPi.NetStandard
 namespace web_api.Controllers
 {
     [ApiController]
