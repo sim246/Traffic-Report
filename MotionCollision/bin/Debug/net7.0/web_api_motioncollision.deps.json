@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "web_api/1.0.0": {
+      "web_api_motioncollision/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": "7.0.11",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
-          "web_api.dll": {}
+          "web_api_motioncollision.dll": {}
         }
       },
       "Microsoft.AspNetCore.OpenApi/7.0.11": {
@@ -76,7 +76,7 @@
     }
   },
   "libraries": {
-    "web_api/1.0.0": {
+    "web_api_motioncollision/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
