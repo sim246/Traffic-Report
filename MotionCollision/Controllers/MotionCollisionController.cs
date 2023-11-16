@@ -8,7 +8,7 @@ namespace web_api.Controllers
     [Route("[controller]")]
     public class CollisionSensorController : ControllerBase
     {
-	private readonly string[] PostalCodes = { "H2L 4T9", "H2J 4B4", "H3H 1Y3", "H1Z 3A7" };
+	private readonly string[] PostalCodes = { "H2L 4T9", "H2J 4B4", "H3H 1Y3", "H1Z 3A7", "H2H 1S9" };
 	private readonly string[] Type = {"motion", "colision"};
 
 	private readonly ILogger<CollisionSensorController> _logger;
