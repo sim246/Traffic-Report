@@ -1,5 +1,8 @@
-import paho.mqtt.client as mqtt 
 import time
+import json
+import paho.mqtt.client as mqtt
+import requests
+import sys
 
 broker_hostname = "localhost"
 port = 1883 
@@ -29,26 +32,39 @@ def make_request_weather():
     url = "http://0.0.0.0:5080/WeatherForecast"
     response = requests.get(url)
     response_json = response.json()
-    print(response_json)
+    #print(response_json)
+    return response_json
 
-make_request_weather()
 
 def make_request_motioncollision():
     url = "http://0.0.0.0:5081/CollisionSensor"
     response = requests.get(url)
     response_json = response.json()
-    print(response_json)
-
-make_request_motioncollision()
-
+    #print(response_json)
+    return response_json
 
 
+msg_count = 0
 try:
     while msg_count < 100:
-        time.sleep(1)
+        time.sleep(5)
         msg_count += 1
+        
+        topic = "WeatherForecast"
+        msg = json.dumps(make_request_weather())
         result = client.publish(topic=topic, payload=msg)
         status = result[0]
+        
+        if status == 0:
+            print("Message "+ msg + " is published to topic " + topic)
+        else:
+            print("Failed to send message to topic " + topic)
+            
+        topic = "CollisionSensor"
+        msg = json.dumps(make_request_motioncollision())
+        result = client.publish(topic=topic, payload=msg)
+        status = result[0]
+        
         if status == 0:
             print("Message "+ msg + " is published to topic " + topic)
         else:
