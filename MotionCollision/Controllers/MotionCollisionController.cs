@@ -6,19 +6,19 @@ using System;
 using Microsoft.Extensions.Logging;
 
 
-//http://10.172.25.216:5081/CollisionSensor
+//http://10.172.25.216:5081/MotionCollisionSensorController
 namespace web_api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CollisionSensorController : ControllerBase
+    public class MotionCollisionSensorController : ControllerBase
     {
 	private readonly string[] PostalCodes = { "H2L 4T9", "H2J 4B4", "H3H 1Y3", "H1Z 3A7", "H2H 1S9" };
 	private readonly string[] Type = {"motion", "colision"};
 
-	private readonly ILogger<CollisionSensorController> _logger;
+	private readonly ILogger<MotionCollisionSensorController> _logger;
 
-	public CollisionSensorController(ILogger<CollisionSensorController> logger)
+	public MotionCollisionSensorController(ILogger<MotionCollisionSensorController> logger)
 	{
 	_logger = logger;
 	}
@@ -39,12 +39,12 @@ namespace web_api.Controllers
 	    
 	    try {
 		if (theDetection != null ){
-		    return Enumerable.Range(1, 5).Select(index => new MotionCollision
+		    return new MotionCollision
 		    {
 			Date = theDate,
 			PostalCode = thePostalCode,
 			theDetection = theDetection,
-		    }).ToArray();
+		    };
 		} else {
 		  return BadRequest("MotionCollision data not found");
 		}

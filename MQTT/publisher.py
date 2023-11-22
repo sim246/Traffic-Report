@@ -37,7 +37,7 @@ def make_request_weather():
 
 
 def make_request_motioncollision():
-    url = "http://0.0.0.0:5081/CollisionSensor"
+    url = "http://0.0.0.0:5081/MotionCollisionSensorController"
     response = requests.get(url)
     response_json = response.json()
     #print(response_json)
