@@ -25,6 +25,24 @@ client.loop_start()
 topic = "TODO"
 msg = "TODO"
 
+def make_request_weather():
+    url = "http://0.0.0.0:5080/WeatherForecast"
+    response = requests.get(url)
+    response_json = response.json()
+    print(response_json)
+
+make_request_weather()
+
+def make_request_motioncollision():
+    url = "http://0.0.0.0:5081/CollisionSensor"
+    response = requests.get(url)
+    response_json = response.json()
+    print(response_json)
+
+make_request_motioncollision()
+
+
+
 try:
     while msg_count < 100:
         time.sleep(1)
