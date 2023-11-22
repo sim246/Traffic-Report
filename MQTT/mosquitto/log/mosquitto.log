@@ -1,0 +1,50 @@
+1700158155: mosquitto version 2.0.18 starting
+1700158155: Config loaded from /mosquitto/config/mosquitto.conf.
+1700158155: Opening ipv4 listen socket on port 1883.
+1700158155: Opening ipv6 listen socket on port 1883.
+1700158155: mosquitto version 2.0.18 running
+1700613612: mosquitto version 2.0.18 starting
+1700613612: Config loaded from /mosquitto/config/mosquitto.conf.
+1700613612: Opening ipv4 listen socket on port 1883.
+1700613612: Opening ipv6 listen socket on port 1883.
+1700613612: mosquitto version 2.0.18 running
+1700613652: New connection from 172.18.0.1:40574 on port 1883.
+1700613652: New client connected from 172.18.0.1:40574 as Client1 (p2, c1, k60, u'user_name').
+1700613653: Client Client1 closed its connection.
+1700613691: New connection from 172.18.0.1:41022 on port 1883.
+1700613691: New client connected from 172.18.0.1:41022 as Client1 (p2, c1, k60, u'user_name').
+1700613691: Client Client1 closed its connection.
+1700613897: New connection from 172.18.0.1:60704 on port 1883.
+1700613897: New client connected from 172.18.0.1:60704 as Client1 (p2, c1, k60, u'user_name').
+1700613897: Client Client1 closed its connection.
+1700614027: New connection from 172.18.0.1:52934 on port 1883.
+1700614027: New client connected from 172.18.0.1:52934 as Client1 (p2, c1, k60, u'user_name').
+1700614028: Client Client1 closed its connection.
+1700614167: New connection from 172.18.0.1:44098 on port 1883.
+1700614167: New client connected from 172.18.0.1:44098 as Client1 (p2, c1, k60, u'user_name').
+1700614178: Client Client1 closed its connection.
+1700614233: New connection from 172.18.0.1:38464 on port 1883.
+1700614233: New client connected from 172.18.0.1:38464 as Client1 (p2, c1, k60, u'user_name').
+1700614298: Client Client1 closed its connection.
+1700614568: New connection from 172.18.0.1:53926 on port 1883.
+1700614568: New client connected from 172.18.0.1:53926 as Client1 (p2, c1, k60, u'user_name').
+1700614573: Client Client1 closed its connection.
+1700614605: New connection from 172.18.0.1:35894 on port 1883.
+1700614605: New client connected from 172.18.0.1:35894 as Client1 (p2, c1, k60, u'user_name').
+1700614611: Client Client1 closed its connection.
+1700614708: New connection from 172.18.0.1:49796 on port 1883.
+1700614708: New client connected from 172.18.0.1:49796 as Client1 (p2, c1, k60, u'user_name').
+1700614726: Client Client1 closed its connection.
+1700615412: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700617213: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700619014: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700620815: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700622616: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700624417: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700626218: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700628019: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700629820: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700631621: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700633422: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700635223: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700637024: Saving in-memory database to /mosquitto/data//mosquitto.db.
