@@ -18,7 +18,7 @@ client = mqtt.Client(client_id="Client1", userdata=None)
 client.on_connect = on_connect
 
 # change with your user and password auth
-client.username_pw_set(username="user_name", password="password")
+client.username_pw_set(username="user1", password="password")
 
 
 client.connect(broker_hostname, port, 60)
@@ -37,7 +37,7 @@ def make_request_weather():
 
 
 def make_request_motioncollision():
-    url = "http://0.0.0.0:5081/MotionCollisionSensorController"
+    url = "http://0.0.0.0:5081/MotionCollisionSensor"
     response = requests.get(url)
     response_json = response.json()
     #print(response_json)
