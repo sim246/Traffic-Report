@@ -16,11 +16,7 @@ def on_connect(client, userdata, flags, return_code):
 
 client = mqtt.Client(client_id="Client1", userdata=None)
 client.on_connect = on_connect
-
-# change with your user and password auth
 client.username_pw_set(username="user1", password="password")
-
-
 client.connect(broker_hostname, port, 60)
 #client.loop_forever()
 client.loop_start()
@@ -47,7 +43,7 @@ def make_request_motioncollision():
 msg_count = 0
 try:
     while msg_count < 100:
-        time.sleep(5)
+        time.sleep(3)
         msg_count += 1
         
         topic = "WeatherForecast"
@@ -60,7 +56,7 @@ try:
         else:
             print("Failed to send message to topic " + topic)
             
-        topic = "CollisionSensor"
+        topic = "MotionCollisionSensor"
         msg = json.dumps(make_request_motioncollision())
         result = client.publish(topic=topic, payload=msg)
         status = result[0]

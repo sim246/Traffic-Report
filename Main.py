@@ -1,5 +1,6 @@
 from picamera2 import Picamera2, Preview
 import time
+import json
 from random import randrange
 
 def take_picture(detection_type, detection_color, detection):
@@ -35,7 +36,3 @@ def random_color():
 	if (intcolor == 2):
 		print("green")
 		return "green"
-
-if __name__ == '__main__':
-	color = random_color()
-	take_picture("colision", color, True)
