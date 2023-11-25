@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5" >
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
     <title>TraficReport</title>
 </head>
 <body>
     <h1>Trafic Report</h1>
-    {% if weather %}
-        <p>{{ weather }}</p>
-    {% endif %}
     {% if motion_collision %}
         <p>{{ motion_collision }}</p>
+    {% endif %}
+    {% if weather %}
+        <p>{{ weather }}</p>
     {% endif %}
 </body>
 </html>

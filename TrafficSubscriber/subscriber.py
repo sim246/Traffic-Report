@@ -19,12 +19,13 @@ def on_connect(client, userdata, flags, return_code):
         print("could not connect, return code:", return_code)
 
 def on_message(client, userdata, message):
-    global weather_data, collision_data, public_key
-    print("Received message: ")
+    global weather_data, collision_data
     if message.topic == "WeatherForecast":
+        print("Received message: ")
         weather_data = json.loads(str(message.payload.decode("utf-8")))
         print(weather_data)
     elif message.topic == "MotionCollisionSensor":
+        print("Received message: ")
         motion_collision_data = json.loads(str(message.payload.decode("utf-8")))
         print(motion_collision_data["date"] + motion_collision_data["postalCode"] + str(motion_collision_data["theDetection"]))
     #elif message.topic == "PublicKey":
