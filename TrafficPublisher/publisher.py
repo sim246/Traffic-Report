@@ -73,7 +73,7 @@ def motion_collision_loop(client, private_key):
                 print("The light is yellow SLOW DOWN!")
             elif color == "red":
                 print("The light is red STOP!")
-                #if response["theDetection"]["value"] == True:
+                if response["theDetection"]["value"] == True:
                     #take_picture("traffic_publisher_photo.jpg", "Check traffic_publisher_photo.jpg for offence ")
                     #print("STOP, you have violated the law!")
                     #filename = './traffic_publisher_photo.jpg'
@@ -81,8 +81,17 @@ def motion_collision_loop(client, private_key):
                         #img_data = file.read()
                     #enc_data = base64.b64encode(img_data).decode('utf-8')
                     #response["image"] = enc_data
+                    signature = sign(str.encode(json.dumps(response)), private_key)
+                    message = response | {'signature': signature.hex()}
+                    topic="MotionCollisionSensor"
+                    result = client.publish(topic=topic, payload=json.dumps(message))
+                    status = result[0]
+                    if status == 0:
+                        print("Message is" + json.dumps(message) + "published to topic " + topic)
+                    else:
+                        print("Failed to send message to topic " + topic)
         
-        #if response["theDetection"]["type"] == "colision" and response["theDetection"]["value"] == True:
+        if response["theDetection"]["type"] == "colision" and response["theDetection"]["value"] == True:
             #take_picture("traffic_publisher_photo.jpg", "Check traffic_publisher_photo.jpg for accident ")
             #print("There was an accident!")
             #filename = './traffic_publisher_photo.jpg'
@@ -90,16 +99,16 @@ def motion_collision_loop(client, private_key):
                 #img_data = file.read()
             #enc_data = base64.b64encode(img_data).decode('utf-8')
             #response["image"] = enc_data
-            
-        signature = sign(str.encode(json.dumps(response)), private_key)
-        message = response | {'signature': signature.hex()}
-        topic="MotionCollisionSensor"
-        result = client.publish(topic=topic, payload=json.dumps(message))
-        status = result[0]
-        if status == 0:
-            print("Message is" + json.dumps(message) + "published to topic " + topic)
-        else:
-            print("Failed to send message to topic " + topic)
+                
+            signature = sign(str.encode(json.dumps(response)), private_key)
+            message = response | {'signature': signature.hex()}
+            topic="MotionCollisionSensor"
+            result = client.publish(topic=topic, payload=json.dumps(message))
+            status = result[0]
+            if status == 0:
+                print("Message is" + json.dumps(message) + "published to topic " + topic)
+            else:
+                print("Failed to send message to topic " + topic)
         time.sleep(4)
 
 def weather_loop(client, private_key):
@@ -124,7 +133,7 @@ def on_connect(client, userdata, flags, return_code):
     else:
         print("could not connect, return code:", return_code)
 
-if __name__ == '__main__':
+def start():
     print('Program is starting...')
 
     broker_hostname = "localhost"
@@ -143,8 +152,8 @@ if __name__ == '__main__':
     client1.loop_start()
     client2.loop_start()
 
-    private_pem_bytes = Path("../Keys/private_key.pem").read_bytes()
-    public_pem_bytes = Path("../Keys/public_key.pem").read_bytes()
+    private_pem_bytes = Path("./Keys/private_key.pem").read_bytes()
+    public_pem_bytes = Path("./Keys/public_key.pem").read_bytes()
 
     try:
         private_key_from_pem = serialization.load_pem_private_key(
