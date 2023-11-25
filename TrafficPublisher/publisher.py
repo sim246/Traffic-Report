@@ -81,17 +81,8 @@ def motion_collision_loop(client, private_key):
                     with open(filename, mode='rb') as file:
                         img_data = file.read()
                     enc_data = base64.b64encode(img_data).decode('utf-8')
-
                     response["image"] = enc_data
-                    signature = sign(str.encode(json.dumps(response)), private_key)
-                    message = response | {'signature': signature.hex()}
-                    topic="MotionCollisionSensor"
-                    result = client.publish(topic=topic, payload=json.dumps(message))
-                    status = result[0]
-                    if status == 0:
-                        print("Message is published to topic " + topic)
-                    else:
-                        print("Failed to send message to topic " + topic)
+        
         if response["theDetection"]["type"] == "colision" and response["theDetection"]["value"] == True:
             take_picture("traffic_publisher_photo.jpg", "Check traffic_publisher_photo.jpg for accident ")
             print("There was an accident!")
@@ -100,19 +91,18 @@ def motion_collision_loop(client, private_key):
             with open(filename, mode='rb') as file:
                 img_data = file.read()
             enc_data = base64.b64encode(img_data).decode('utf-8')
-
             response["image"] = enc_data
-            signature = sign(str.encode(json.dumps(response)), private_key)
-            message = response | {'signature': signature.hex()}
-            topic="MotionCollisionSensor"
-            result = client.publish(topic=topic, payload=json.dumps(message))
-            status = result[0]
-            if status == 0:
-                print("Message is published to topic " + topic)
-            else:
-                print("Failed to send message to topic " + topic)
-
-        time.sleep(6)
+        
+        signature = sign(str.encode(json.dumps(response)), private_key)
+        message = response | {'signature': signature.hex()}
+        topic="MotionCollisionSensor"
+        result = client.publish(topic=topic, payload=json.dumps(message))
+        status = result[0]
+        if status == 0:
+            print("Message is published to topic " + topic)
+        else:
+            print("Failed to send message to topic " + topic)
+        time.sleep(4)
 
 def weather_loop(client, private_key):
     while True:
@@ -128,7 +118,7 @@ def weather_loop(client, private_key):
         else:
             print("Failed to send message to topic " + topic)
 
-        time.sleep(7)
+        time.sleep(4)
 
 def on_connect(client, userdata, flags, return_code):
     print("CONNACK received with code %s." % return_code)
