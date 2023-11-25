@@ -11,11 +11,6 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 
-def make_camera():
-    picam2 = Picamera2()
-    camera_config = picam2.create_preview_configuration()
-    picam2.configure(camera_config)
-
 def sign(message, private_key):
     return private_key.sign(
         message,
@@ -26,8 +21,15 @@ def sign(message, private_key):
         hashes.SHA256()
     )
 
-def take_picture(picam2, picture_name, log_string):
+def take_picture(picture_name, log_string):
+    picam2 = Picamera2()
+    camera_config = picam2.create_preview_configuration()
+    picam2.configure(camera_config)
+    picam2.start_preview(Preview.QT)
+    picam2.start()
+    time.sleep(2)
     picam2.capture_file(picture_name)
+
     timestamp = datetime.datetime.now()
     with open("logs.txt", "a") as file:
         file.write(log_string + str(timestamp) + "\n")
@@ -50,13 +52,13 @@ def make_request_weather():
 
 
 def make_request_motioncollision():
-    url = "http://0.0.0.0:5081/MotionCollisionSensorController"
+    url = "http://0.0.0.0:5081/MotionCollisionSensor"
     response = requests.get(url)
     response_json = response.json()
     #print(response_json)
     return response_json
 
-def motion_collision_loop(picam2, client, private_key):
+def motion_collision_loop(client, private_key):
     turn = 0
     while True:
         color = random_color()
@@ -66,14 +68,9 @@ def motion_collision_loop(picam2, client, private_key):
             print("The light is yellow SLOW DOWN!")
         elif color == "red":
             print("The light is red STOP!")
-
-
             response = make_request_motioncollision()
-            if response["detection"]["value"] == True:
-                thread = Thread(target=take_picture,
-                                args=(picam2, "traffic_publisher_photo.jpg", "Check traffic_publisher_photo.jpg for offence ",))
-                thread.start()
-                thread.join()
+            if response["theDetection"]["value"] == True:
+                take_picture("traffic_publisher_photo.jpg", "Check traffic_publisher_photo.jpg for offence ")
                 print("You violated the law")
 
                 filename = './traffic_publisher_photo.jpg'
@@ -83,19 +80,18 @@ def motion_collision_loop(picam2, client, private_key):
                 print(enc_data)
 
                 response["image"] = enc_data
+                signature = sign(str.encode(json.dumps(response)), private_key)
+                message = response | {'signature': signature.hex()}
+                print(message)
+                topic="MotionCollisionSensor"
+                result = client.publish(topic=topic, payload=json.dumps(message))
+                status = result[0]
+                if status == 0:
+                    print("Message "+ json.dumps(message) + " is published to topic " + topic)
+                else:
+                    print("Failed to send message to topic " + topic)
 
-            signature = sign(str.encode(json.dumps(response)), private_key)
-            message = response | {'signature': signature.hex()}
-            print(message)
-            topic="MotionCollisionSensor"
-            result = client.publish(topic=topic, payload=json.dumps(message))
-            status = result[0]
-            if status == 0:
-                print("Message "+ json.dumps(message) + " is published to topic " + topic)
-            else:
-                print("Failed to send message to topic " + topic)
-
-        time.sleep(1.5)
+        time.sleep(6)
 
 def weather_loop(client, private_key):
     while True:
@@ -112,7 +108,7 @@ def weather_loop(client, private_key):
         else:
             print("Failed to send message to topic " + topic)
 
-        time.sleep(2)
+        time.sleep(7)
 
 def on_connect(client, userdata, flags, return_code):
     print("CONNACK received with code %s." % return_code)
@@ -153,9 +149,8 @@ if __name__ == '__main__':
     except ValueError:
         print("Incorrect Password")
 
-    picam2 = make_camera()
-    weather_thread = Thread(target=weather_loop, args=[client1, private_key_from_pem])
-    collision_thread = Thread(target=motion_collision_loop, args=[picam2, client2, private_key_from_pem])
+    #weather_thread = Thread(target=weather_loop, args=[client1, private_key_from_pem])
+    collision_thread = Thread(target=motion_collision_loop, args=[client2, private_key_from_pem])
 
     try:
         public_pem_data = base64.b64encode(public_pem_bytes).decode('utf-8')
@@ -163,15 +158,13 @@ if __name__ == '__main__':
 
         print('Public Key: '+  public_pem_data)
 
-        weather_thread.start()
+        #weather_thread.start()
         collision_thread.start()
 
     except KeyboardInterrupt:
-        picam2.stop()
         client1.loop_stop()
         client2.loop_stop()
 
     except Exception:
-        picam2.stop()
         client1.loop_stop()
         client2.loop_stop()
