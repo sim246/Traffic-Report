@@ -177,3 +177,5 @@ Check traffic_publisher_photo.jpg for accident 2023-11-25 21:54:30.190452
 Check traffic_publisher_photo.jpg for offence 2023-11-25 21:54:40.304619
 Check traffic_publisher_photo.jpg for accident 2023-11-25 21:54:54.520861
 Check traffic_publisher_photo.jpg for accident 2023-11-25 21:55:08.729823
+Check traffic_publisher_photo.jpg for accident 2023-11-25 22:07:46.208320
+Check traffic_publisher_photo.jpg for offence 2023-11-25 22:09:04.522229

@@ -1687,3 +1687,28 @@ To fix this, use `chmod 0700 /mosquitto/config/passwd`.
 1700967309: Client auto-4CD6EFEE-6CB3-A655-3FE8-86AF4781ED0C closed its connection.
 1700967312: Client Client2 closed its connection.
 1700967312: Client Client1 closed its connection.
+1700968049: New connection from 172.18.0.1:36078 on port 1883.
+1700968049: New client connected from 172.18.0.1:36078 as auto-47F3873F-9D99-AE9B-F14A-223DDB5A8419 (p2, c1, k60, u'user1').
+1700968058: New connection from 172.18.0.1:53082 on port 1883.
+1700968058: New client connected from 172.18.0.1:53082 as Client1 (p2, c1, k60, u'user1').
+1700968058: New connection from 172.18.0.1:53090 on port 1883.
+1700968058: New client connected from 172.18.0.1:53090 as Client2 (p2, c1, k60, u'user2').
+1700968068: Client Client2 closed its connection.
+1700968068: Client Client1 closed its connection.
+1700968123: New connection from 172.18.0.1:58078 on port 1883.
+1700968123: New client connected from 172.18.0.1:58078 as Client1 (p2, c1, k60, u'user1').
+1700968123: New connection from 172.18.0.1:58092 on port 1883.
+1700968123: New client connected from 172.18.0.1:58092 as Client2 (p2, c1, k60, u'user2').
+1700968128: Client Client1 closed its connection.
+1700968128: Client Client2 closed its connection.
+1700968132: Client auto-47F3873F-9D99-AE9B-F14A-223DDB5A8419 closed its connection.
+1700968133: New connection from 172.18.0.1:38522 on port 1883.
+1700968133: New client connected from 172.18.0.1:38522 as auto-E3FE22D3-51BD-B30D-3CF6-477D918D4315 (p2, c1, k60, u'user1').
+1700968141: New connection from 172.18.0.1:49528 on port 1883.
+1700968141: New client connected from 172.18.0.1:49528 as Client1 (p2, c1, k60, u'user1').
+1700968141: New connection from 172.18.0.1:49536 on port 1883.
+1700968141: New client connected from 172.18.0.1:49536 as Client2 (p2, c1, k60, u'user2').
+1700968151: Client Client2 closed its connection.
+1700968151: Client Client1 closed its connection.
+1700968153: Client auto-E3FE22D3-51BD-B30D-3CF6-477D918D4315 closed its connection.
+1700968318: Saving in-memory database to /mosquitto/data//mosquitto.db.

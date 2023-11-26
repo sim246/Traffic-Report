@@ -2,7 +2,7 @@ import pytest
 from datetime import datetime
 import jwt
 import paho.mqtt.client as mqtt
-from publisher import on_connect
+from TrafficPublisher.publisher import on_connect
 
 @pytest.fixture()
 def test_gen_valid_token():

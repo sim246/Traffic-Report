@@ -13,6 +13,8 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 
+SECRET = "my-secret"
+
 def sign(message, private_key):
     return private_key.sign(
         message,

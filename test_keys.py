@@ -1,13 +1,13 @@
 import pytest
-from asymetric_keys import sign, verify
+from Keys.asymetric_keys import sign, verify
 from pathlib import Path
 from cryptography.hazmat.primitives import serialization
 
 @pytest.fixture
 def read_keys_from_files():
     try:
-        private_pem_bytes = Path("./private_key.pem").read_bytes()
-        public_pem_bytes = Path("./public_key.pem").read_bytes()
+        private_pem_bytes = Path("./Keys/private_key.pem").read_bytes()
+        public_pem_bytes = Path("./Keys/public_key.pem").read_bytes()
         
         private_key_from_pem = serialization.load_pem_private_key(
             private_pem_bytes,
