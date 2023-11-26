@@ -1,8 +1,15 @@
 from flask import Flask, render_template
 import paho.mqtt.client as mqtt
 import json
+import base64
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import padding
+from cryptography.exceptions import InvalidSignature
 
 global weather_data, motion_collision_data, public_key
+
+public_key = ""
 weather_data = ""
 motion_collision_data = ""
 
@@ -17,7 +24,7 @@ def on_connect(client, userdata, flags, return_code):
         print("connected")
         client.subscribe("WeatherForecast")
         client.subscribe("MotionCollisionSensor")
-        #client.subscribe("PublicKey")
+        client.subscribe("PublicKey")
     else:
         print("could not connect, return code:", return_code)
 
@@ -30,6 +37,10 @@ def on_message(client, userdata, message):
     elif message.topic == topic2:
         motion_collision_data = json.loads(str(message.payload.decode("utf-8")))
         print(motion_collision_data["date"] + motion_collision_data["postalCode"] + str(motion_collision_data["theDetection"]))
+    elif message.topic == "PublicKey":
+        public_key_data = json.loads(message.payload.decode("utf-8"))
+        public_key_bytes = base64.b64decode(public_key_data.get('publickey'))
+        public_key = serialization.load_pem_public_key(public_key_bytes)
 
 def get_weather():
     global weather_data
@@ -41,12 +52,40 @@ def get_motion_collision():
     if motion_collision_data != "":
         return motion_collision_data
 
+def get_public_key():
+    global public_key
+    if public_key != "":
+        return public_key
+
+###### Verifying signature
+def verify(signature, message, public_key):
+    try:
+        public_key.verify(
+            signature,
+            message,
+            padding.PSS(
+                mgf=padding.MGF1(hashes.SHA256()),
+                salt_length=padding.PSS.MAX_LENGTH
+            ),
+            hashes.SHA256()
+        )
+        return True
+    except InvalidSignature:
+        return False
+
+def excludeKeysFromDict(dictObj, keysArray):
+    return {x: dictObj[x] for x in dictObj if x not in keysArray}
+
 @app.route('/')
 def hello_world():
+    public_key = get_public_key()
     weather_data = get_weather()
     motion_collision_data = get_motion_collision()
-    if motion_collision_data != "":
-        return render_template('index.html', motion_collision = motion_collision_data, weather = weather_data)
+    if public_key != "":
+        if verify(bytes.fromhex(weather_data.get('signature')),
+                                           str.encode(json.dumps(excludeKeysFromDict(weather_data, ['signature']))),
+                                           public_key):
+            return render_template('index.html', motion_collision = motion_collision_data, weather = weather_data)
 
 if __name__ == '__main__':
     client = mqtt.Client()

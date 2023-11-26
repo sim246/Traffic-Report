@@ -1478,3 +1478,160 @@ To fix this, use `chmod 0700 /mosquitto/config/passwd`.
 1700961776: Client Client2 closed its connection.
 1700961776: Client Client3 closed its connection.
 1700961776: Client Client1 closed its connection.
+1700962103: New connection from 172.18.0.1:50454 on port 1883.
+1700962103: Client Client3 disconnected, not authorised.
+1700962797: New connection from 172.18.0.1:55984 on port 1883.
+1700962797: New connection from 172.18.0.1:55982 on port 1883.
+1700962797: New client connected from 172.18.0.1:55984 as Client3 (p2, c1, k60, u'user3').
+1700962797: New client connected from 172.18.0.1:55982 as Client1 (p2, c1, k60, u'user1').
+1700962797: New connection from 172.18.0.1:56000 on port 1883.
+1700962797: New client connected from 172.18.0.1:56000 as Client2 (p2, c1, k60, u'user2').
+1700962801: Client Client2 closed its connection.
+1700962801: Client Client1 closed its connection.
+1700962801: Client Client3 closed its connection.
+1700962806: New connection from 172.18.0.1:39870 on port 1883.
+1700962806: New connection from 172.18.0.1:39872 on port 1883.
+1700962806: New client connected from 172.18.0.1:39870 as Client3 (p2, c1, k60, u'user3').
+1700962806: New client connected from 172.18.0.1:39872 as Client1 (p2, c1, k60, u'user1').
+1700962806: New connection from 172.18.0.1:39892 on port 1883.
+1700962806: New client connected from 172.18.0.1:39892 as Client2 (p2, c1, k60, u'user2').
+1700962819: Client Client2 closed its connection.
+1700962819: Client Client3 closed its connection.
+1700962819: Client Client1 closed its connection.
+1700962915: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700963406: New connection from 172.18.0.1:42390 on port 1883.
+1700963406: New client connected from 172.18.0.1:42390 as Client1 (p2, c1, k60, u'user1').
+1700963406: New connection from 172.18.0.1:42394 on port 1883.
+1700963406: New client connected from 172.18.0.1:42394 as Client2 (p2, c1, k60, u'user2').
+1700963406: Client Client2 closed its connection.
+1700963406: Client Client1 closed its connection.
+1700963428: New connection from 172.18.0.1:33728 on port 1883.
+1700963428: New client connected from 172.18.0.1:33728 as Client1 (p2, c1, k60, u'user1').
+1700963428: New connection from 172.18.0.1:33734 on port 1883.
+1700963428: New client connected from 172.18.0.1:33734 as Client2 (p2, c1, k60, u'user2').
+1700963434: Client Client2 closed its connection.
+1700963434: Client Client1 closed its connection.
+1700963478: New connection from 172.18.0.1:51670 on port 1883.
+1700963478: New client connected from 172.18.0.1:51670 as auto-DE5A91D6-04F8-D001-EB3D-8C3F9D344E97 (p2, c1, k60, u'user1').
+1700963484: New connection from 172.18.0.1:51674 on port 1883.
+1700963484: New client connected from 172.18.0.1:51674 as Client1 (p2, c1, k60, u'user1').
+1700963484: New connection from 172.18.0.1:51680 on port 1883.
+1700963484: New client connected from 172.18.0.1:51680 as Client2 (p2, c1, k60, u'user2').
+1700963492: Client auto-DE5A91D6-04F8-D001-EB3D-8C3F9D344E97 closed its connection.
+1700963494: Client Client1 closed its connection.
+1700963494: Client Client2 closed its connection.
+1700963509: New connection from 172.18.0.1:57512 on port 1883.
+1700963509: New client connected from 172.18.0.1:57512 as auto-D5E2F717-4679-A0F5-D536-5205100CD394 (p2, c1, k60, u'user1').
+1700963515: New connection from 172.18.0.1:42758 on port 1883.
+1700963515: New client connected from 172.18.0.1:42758 as Client1 (p2, c1, k60, u'user1').
+1700963515: New connection from 172.18.0.1:42770 on port 1883.
+1700963515: New client connected from 172.18.0.1:42770 as Client2 (p2, c1, k60, u'user2').
+1700963523: Client auto-D5E2F717-4679-A0F5-D536-5205100CD394 closed its connection.
+1700963539: Client Client1 closed its connection.
+1700963539: Client Client2 closed its connection.
+1700963544: New connection from 172.18.0.1:39632 on port 1883.
+1700963544: New client connected from 172.18.0.1:39632 as auto-8E37A120-49DD-1C5A-0BD3-BDB95C89E592 (p2, c1, k60, u'user1').
+1700963548: New connection from 172.18.0.1:45932 on port 1883.
+1700963548: New client connected from 172.18.0.1:45932 as Client1 (p2, c1, k60, u'user1').
+1700963548: New connection from 172.18.0.1:45938 on port 1883.
+1700963548: New client connected from 172.18.0.1:45938 as Client2 (p2, c1, k60, u'user2').
+1700963591: Client auto-8E37A120-49DD-1C5A-0BD3-BDB95C89E592 closed its connection.
+1700963593: Client Client2 closed its connection.
+1700963593: Client Client1 closed its connection.
+1700963695: New connection from 172.18.0.1:56046 on port 1883.
+1700963695: New client connected from 172.18.0.1:56046 as auto-66B767C1-39C0-0CE7-616C-1441B2527207 (p2, c1, k60, u'user1').
+1700963703: New connection from 172.18.0.1:56058 on port 1883.
+1700963703: New client connected from 172.18.0.1:56058 as Client1 (p2, c1, k60, u'user1').
+1700963703: New connection from 172.18.0.1:56062 on port 1883.
+1700963703: New client connected from 172.18.0.1:56062 as Client2 (p2, c1, k60, u'user2').
+1700963884: Client Client1 closed its connection.
+1700963884: Client Client2 closed its connection.
+1700963891: Client auto-66B767C1-39C0-0CE7-616C-1441B2527207 closed its connection.
+1700963900: New connection from 172.18.0.1:60172 on port 1883.
+1700963900: New client connected from 172.18.0.1:60172 as Client3 (p2, c1, k60, u'user3').
+1700963905: New connection from 172.18.0.1:33780 on port 1883.
+1700963905: New client connected from 172.18.0.1:33780 as Client1 (p2, c1, k60, u'user1').
+1700963905: New connection from 172.18.0.1:33796 on port 1883.
+1700963905: New client connected from 172.18.0.1:33796 as Client2 (p2, c1, k60, u'user2').
+1700963921: Client Client3 closed its connection.
+1700964077: New connection from 172.18.0.1:60064 on port 1883.
+1700964077: New client connected from 172.18.0.1:60064 as auto-945B06A5-03FD-DEA3-9930-61199FF745AE (p2, c1, k60, u'user1').
+1700964081: Client Client1 closed its connection.
+1700964081: Client Client2 closed its connection.
+1700964083: New connection from 172.18.0.1:60072 on port 1883.
+1700964083: New client connected from 172.18.0.1:60072 as Client1 (p2, c1, k60, u'user1').
+1700964083: New connection from 172.18.0.1:60082 on port 1883.
+1700964083: New client connected from 172.18.0.1:60082 as Client2 (p2, c1, k60, u'user2').
+1700964093: Client auto-945B06A5-03FD-DEA3-9930-61199FF745AE closed its connection.
+1700964096: New connection from 172.18.0.1:38006 on port 1883.
+1700964096: New client connected from 172.18.0.1:38006 as Client3 (p2, c1, k60, u'user3').
+1700964099: Client Client2 closed its connection.
+1700964099: Client Client1 closed its connection.
+1700964100: New connection from 172.18.0.1:38016 on port 1883.
+1700964100: New client connected from 172.18.0.1:38016 as Client1 (p2, c1, k60, u'user1').
+1700964100: New connection from 172.18.0.1:38026 on port 1883.
+1700964100: New client connected from 172.18.0.1:38026 as Client2 (p2, c1, k60, u'user2').
+1700964107: Client Client2 closed its connection.
+1700964107: Client Client1 closed its connection.
+1700964109: Client Client3 closed its connection.
+1700964113: New connection from 172.18.0.1:42204 on port 1883.
+1700964113: New client connected from 172.18.0.1:42204 as Client3 (p2, c1, k60, u'user3').
+1700964115: New connection from 172.18.0.1:58024 on port 1883.
+1700964115: New client connected from 172.18.0.1:58024 as Client1 (p2, c1, k60, u'user1').
+1700964115: New connection from 172.18.0.1:58036 on port 1883.
+1700964115: New client connected from 172.18.0.1:58036 as Client2 (p2, c1, k60, u'user2').
+1700964128: Client Client3 closed its connection.
+1700964133: Client Client2 closed its connection.
+1700964133: Client Client1 closed its connection.
+1700964263: New connection from 172.18.0.1:35240 on port 1883.
+1700964263: New client connected from 172.18.0.1:35240 as auto-48B25052-1AD5-C37E-6FFD-BC995FBB5FA9 (p2, c1, k60, u'user1').
+1700964266: New connection from 172.18.0.1:33788 on port 1883.
+1700964266: New client connected from 172.18.0.1:33788 as Client1 (p2, c1, k60, u'user1').
+1700964266: New connection from 172.18.0.1:33796 on port 1883.
+1700964266: New client connected from 172.18.0.1:33796 as Client2 (p2, c1, k60, u'user2').
+1700964447: Client auto-48B25052-1AD5-C37E-6FFD-BC995FBB5FA9 closed its connection.
+1700964449: New connection from 172.18.0.1:47036 on port 1883.
+1700964449: New client connected from 172.18.0.1:47036 as auto-B2EC308A-32C6-A312-2BC5-9F8876CAD8CC (p2, c1, k60, u'user1').
+1700964456: Client Client1 closed its connection.
+1700964456: Client Client2 closed its connection.
+1700964458: New connection from 172.18.0.1:48908 on port 1883.
+1700964458: New client connected from 172.18.0.1:48908 as Client1 (p2, c1, k60, u'user1').
+1700964458: New connection from 172.18.0.1:48920 on port 1883.
+1700964458: New client connected from 172.18.0.1:48920 as Client2 (p2, c1, k60, u'user2').
+1700964487: Client Client2 closed its connection.
+1700964487: Client Client1 closed its connection.
+1700964489: Client auto-B2EC308A-32C6-A312-2BC5-9F8876CAD8CC closed its connection.
+1700964716: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700965007: New connection from 172.18.0.1:49010 on port 1883.
+1700965007: New client connected from 172.18.0.1:49010 as auto-1109E96E-86D1-CF93-67F1-4ACB46BB3917 (p2, c1, k60, u'user1').
+1700965011: New connection from 172.18.0.1:49020 on port 1883.
+1700965011: New client connected from 172.18.0.1:49020 as Client1 (p2, c1, k60, u'user1').
+1700965011: New connection from 172.18.0.1:49028 on port 1883.
+1700965011: New client connected from 172.18.0.1:49028 as Client2 (p2, c1, k60, u'user2').
+1700965284: Client auto-1109E96E-86D1-CF93-67F1-4ACB46BB3917 closed its connection.
+1700965286: New connection from 172.18.0.1:45296 on port 1883.
+1700965286: New client connected from 172.18.0.1:45296 as auto-C32E16DE-2D99-32EB-C16A-EF4B30FAD4DC (p2, c1, k60, u'user1').
+1700965289: Client Client2 closed its connection.
+1700965289: Client Client1 closed its connection.
+1700965291: New connection from 172.18.0.1:45302 on port 1883.
+1700965291: New client connected from 172.18.0.1:45302 as Client1 (p2, c1, k60, u'user1').
+1700965291: New connection from 172.18.0.1:45310 on port 1883.
+1700965291: New client connected from 172.18.0.1:45310 as Client2 (p2, c1, k60, u'user2').
+1700965471: Client auto-C32E16DE-2D99-32EB-C16A-EF4B30FAD4DC closed its connection.
+1700965475: Client Client2 closed its connection.
+1700965475: Client Client1 closed its connection.
+1700965482: New connection from 172.18.0.1:44566 on port 1883.
+1700965482: New client connected from 172.18.0.1:44566 as Client1 (p2, c1, k60, u'user1').
+1700965482: New connection from 172.18.0.1:44574 on port 1883.
+1700965482: New client connected from 172.18.0.1:44574 as Client2 (p2, c1, k60, u'user2').
+1700965486: New connection from 172.18.0.1:38050 on port 1883.
+1700965486: New client connected from 172.18.0.1:38050 as auto-35E9A8B4-235D-C9E8-7DAE-286FE4EC6B9D (p2, c1, k60, u'user1').
+1700965494: Client Client2 closed its connection.
+1700965494: Client Client1 closed its connection.
+1700965495: New connection from 172.18.0.1:39002 on port 1883.
+1700965495: New client connected from 172.18.0.1:39002 as Client1 (p2, c1, k60, u'user1').
+1700965495: New connection from 172.18.0.1:39008 on port 1883.
+1700965495: New client connected from 172.18.0.1:39008 as Client2 (p2, c1, k60, u'user2').
+1700965579: Client auto-35E9A8B4-235D-C9E8-7DAE-286FE4EC6B9D closed its connection.
+1700965581: Client Client2 closed its connection.
+1700965581: Client Client1 closed its connection.

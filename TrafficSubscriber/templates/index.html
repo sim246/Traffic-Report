@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="5" >
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
-    <title>TraficReport</title>
+    <title>TrafficReport</title>
 </head>
 <body>
-    <h1>Trafic Report</h1>
+    <h1>Traffic Report</h1>
     {% if motion_collision %}
-        <p>{{ motion_collision }}</p>
+        <h2>Motion Collision</h2>
+        <p>Date:{{ motion_collision.date }}</p>
+        <p>Postal Code: {{ motion_collision.postalCode }}</p>
+        {% if motion_collision.theDetection.type == "motion" %}
+            <p>There was a traffic violation! Someone ran a red light!</p>
+        {% endif %}
+        {% if motion_collision.theDetection.type == "colision" %}
+            <p>There was an accident!</p>
+        {% endif %}
     {% endif %}
     {% if weather %}
-        <p>{{ weather }}</p>
+        <h2>Weather</h2>
+        <p>Postal Code: {{ weather.postalCode }}</p>
+        <p>Date: {{ weather.date }}</p>
+        <p>Temperature: {{ weather.temperature }} °C</p>
+        <p>Weather: {{ weather.type }} {{ weather.intensity }}</p>
     {% endif %}
 </body>
 </html>

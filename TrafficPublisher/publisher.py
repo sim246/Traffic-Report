@@ -133,7 +133,7 @@ def on_connect(client, userdata, flags, return_code):
     else:
         print("could not connect, return code:", return_code)
 
-def start():
+if __name__ == '__main__':
     print('Program is starting...')
 
     broker_hostname = "localhost"
@@ -152,8 +152,8 @@ def start():
     client1.loop_start()
     client2.loop_start()
 
-    private_pem_bytes = Path("./Keys/private_key.pem").read_bytes()
-    public_pem_bytes = Path("./Keys/public_key.pem").read_bytes()
+    private_pem_bytes = Path("../Keys/private_key.pem").read_bytes()
+    public_pem_bytes = Path("../Keys/public_key.pem").read_bytes()
 
     try:
         private_key_from_pem = serialization.load_pem_private_key(
