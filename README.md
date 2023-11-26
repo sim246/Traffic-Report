@@ -1,5 +1,11 @@
 # Team assignment 2
 
+Project Title: Traffic Report
+
+Project Overview: A system that runs on the Raspberry Pi that manages weather and motion collision data. It also classifies infractions and displays then on a UI. 
+
+project Details: there is a Keys file that generates and keeps the keys. MotionCollision and WeatherForecast which build the apis, the MQTT that manages the publish/subscribe messageing service and, TrafficPublisher and TrafficSubscriber which are the subscriber and publisher.
+
 Follow these steps to set up the environment:
 
 Clone the Repository:
