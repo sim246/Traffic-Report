@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/web_api_motioncollision.props" />
+</Project>

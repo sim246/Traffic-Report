@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "gRmaLlL8trkXHymdDPnAlZmRG9SSIOVI4EsO6GzIZnX5xGkCIRXLBXVt4WdlSPi1Gm41c1urnQYmL2CZZfHSNQ==",
+  "success": true,
+  "projectFilePath": "/home/sim2133009/Labs/team-assignment-2/WeatherForecast/web_api.csproj",
+  "expectedPackageFiles": [
+    "/home/sim2133009/.nuget/packages/microsoft.aspnetcore.openapi/7.0.11/microsoft.aspnetcore.openapi.7.0.11.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/home/sim2133009/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

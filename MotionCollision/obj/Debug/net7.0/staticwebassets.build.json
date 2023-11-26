@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0/0eYLfgvBfPG8l9hFHbwZkeCBJg2RWGSAW3DhezVEk=",
+  "Source": "web_api_motioncollision",
+  "BasePath": "_content/web_api_motioncollision",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
