@@ -2,6 +2,8 @@ from flask import Flask, render_template
 import paho.mqtt.client as mqtt
 import json
 import base64
+import shutil
+import os
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
@@ -90,6 +92,10 @@ def start():
                     if verify(bytes.fromhex(motion_collision_data.get('signature')),
                                            str.encode(json.dumps(excludeKeysFromDict(motion_collision_data, ['signature']))),
                                            public_key):
+                        src_dir = "./../TrafficPublisher"
+                        dst_dir = "./static"
+                        jpgfile = os.path.join(src_dir, "traffic_publisher_photo.jpg")
+                        shutil.copy(jpgfile, dst_dir)
                         return render_template('index.html', weather = weather_data, motion_collision = motion_collision_data)
                 else:
                     return render_template('index.html', weather = weather_data)
