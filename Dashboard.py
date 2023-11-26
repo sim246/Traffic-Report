@@ -40,20 +40,6 @@ def on_message(client, userdata, message):
         public_key_data = json.loads(message.payload.decode("utf-8"))
         public_key_bytes = base64.b64decode(public_key_data.get('publickey'))
         public_key = serialization.load_pem_public_key(public_key_bytes)
-
-def connect():
-    client = mqtt.Client("Client3")
-    client.username_pw_set(username="user3", password="password")
-    client.on_connect = on_connect
-    client.on_message = on_message
-
-    client.connect(broker_hostname, port)
-    client.loop_start()
-
-    try:
-        time.sleep(9999999)
-    finally:
-        client.loop_stop()
         
 def get_weather():
     global weather_data
@@ -69,12 +55,8 @@ def get_motion_collision():
     global motion_collision_data
     if motion_collision_data != "NA":
         return motion_collision_data
-
-public_key = get_public_key()
-weather_data = get_weather()
-motion_collision_data = get_motion_collision()
-
-
+        
+        
 
 
 
@@ -93,21 +75,14 @@ try:
                 'margin-left': '5%',
                 'display': 'inline-block'
             }
-        ),
-        html.Div([], id="collision-display"),
-        html.Img(id='collision-img'),
-        dcc.Interval(
-            id='interval-component',
-            interval=3000,  # in milliseconds
-            n_intervals=0
-        ),
+        )
     ])
-except TypeError:
+except:
     app.layout = html.Div([
         daq.Thermometer(
             id='my-thermometer-1',
             value=-40,
-            label="Loading Data ...",
+            label="Loading data ...",
             min=-40,
             max=40,
             style={
@@ -115,25 +90,16 @@ except TypeError:
                 'margin-left': '5%',
                 'display': 'inline-block'
             }
-        ),
-        html.Div([], id="collision-display"),
-        html.Img(id='collision-img'),
-        dcc.Interval(
-            id='interval-component',
-            interval=3000,  # in milliseconds
-            n_intervals=0
-        ),
+        )
     ])
-
+value=1
 @callback(
     Output('my-thermometer-1', 'value'),
     Output('my-thermometer-1', 'label'),
     Input('interval-component', 'n_intervals')
 )
 
-def update_thermometer(value):
-    global weather_data, public_key
-    
+def update_thermometer(value):    
     weather_data = get_weather()
     public_key = get_public_key()
     
@@ -143,39 +109,8 @@ def update_thermometer(value):
                                            public_key):
             lable = weather_data["date"] + " " + weather_data["postalCode"] + " " + weather_data["type"] + " " + weather_data["intensity"]
             return (weather_data["temperature"], lable)
+    return(-40, "Data still loading ...")
 
-@callback(
-    Output('collision-display', 'children'),
-    Input('interval-component', 'n_intervals')
-)
-
-def update_collision(value):
-    global motion_collision_data
-    motion_collision_data = get_motion_collision()
-    public_key = get_public_key()
-    if motion_collision_data != None and public_key != None:
-        if verify(bytes.fromhex(motion_collision_data.get('signature')),
-                                           str.encode(json.dumps(excludeKeysFromDict(motion_collision_data, ['signature']))),
-                                           public_key):
-            return (
-                    f"Date: {motion_collision_data.get('date')}, " +
-                    f"Postal Code: {motion_collision_data.get('postalCode')}, " +
-                    f"Detection Type: {motion_collision_data.get('detection').get('type')}, " +
-                    f"Collision Value: {motion_collision_data.get('detection').get('value')}"
-            )
-
-@callback(
-    Output('collision-img', 'src'),
-    Input('interval-component', 'n_intervals')
-)
-
-def update_collision_image(value):
-    if public_key != None and motion_collision_data != None:
-        if isinstance(motion_collision_data.get("image"), str):
-            if verify(bytes.fromhex(motion_collision_data.get('signature')),
-                                           str.encode(json.dumps(excludeKeysFromDict(motion_collision_data, ['signature']))),
-                                           public_key):
-                return 'data:image/jpg;base64,' + motion_collision_data.get("image")
 
 ###### Verifying signature
 def verify(signature, message, public_key):
