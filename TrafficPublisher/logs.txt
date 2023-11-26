@@ -185,3 +185,17 @@ Check traffic_publisher_photo.jpg for offence 2023-11-25 22:31:42.144292
 Check traffic_publisher_photo.jpg for accident 2023-11-25 22:31:48.212811
 Check traffic_publisher_photo.jpg for accident 2023-11-25 22:41:02.351130
 Check traffic_publisher_photo.jpg for offence 2023-11-25 22:41:16.530936
+Check traffic_publisher_photo.jpg for accident 2023-11-25 22:54:46.995802
+Check traffic_publisher_photo.jpg for accident 2023-11-25 22:54:57.109617
+Check traffic_publisher_photo.jpg for offence 2023-11-25 22:55:31.509157
+Check traffic_publisher_photo.jpg for accident 2023-11-25 22:55:41.646430
+Check traffic_publisher_photo.jpg for accident 2023-11-25 23:04:42.042203
+Check traffic_publisher_photo.jpg for accident 2023-11-25 23:04:52.119760
+Check traffic_publisher_photo.jpg for offence 2023-11-25 23:12:25.459601
+Check traffic_publisher_photo.jpg for accident 2023-11-25 23:12:43.666789
+Check traffic_publisher_photo.jpg for offence 2023-11-25 23:12:49.742106
+Check traffic_publisher_photo.jpg for offence 2023-11-25 23:15:05.679151
+Check traffic_publisher_photo.jpg for accident 2023-11-25 23:15:11.791739
+Check traffic_publisher_photo.jpg for accident 2023-11-25 23:15:53.561399
+Check traffic_publisher_photo.jpg for accident 2023-11-25 23:16:58.099965
+Check traffic_publisher_photo.jpg for accident 2023-11-25 23:17:08.284213
