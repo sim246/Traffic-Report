@@ -18,6 +18,9 @@
         {% if motion_collision.theDetection.type == "colision" %}
             <p>There was an accident!</p>
         {% endif %}
+        {% if motion_collision.image %}
+        <img src="./../TrafficPublisher/traffic_publisher_photo.jpg" alt="motion collision">
+        {% endif %}
     {% endif %}
     {% if weather %}
         <h2>Weather</h2>

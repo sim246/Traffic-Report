@@ -74,13 +74,13 @@ def motion_collision_loop(client, private_key):
             elif color == "red":
                 print("The light is red STOP!")
                 if response["theDetection"]["value"] == True:
-                    #take_picture("traffic_publisher_photo.jpg", "Check traffic_publisher_photo.jpg for offence ")
-                    #print("STOP, you have violated the law!")
-                    #filename = './traffic_publisher_photo.jpg'
-                    #with open(filename, mode='rb') as file:
-                        #img_data = file.read()
-                    #enc_data = base64.b64encode(img_data).decode('utf-8')
-                    #response["image"] = enc_data
+                    take_picture("traffic_publisher_photo.jpg", "Check traffic_publisher_photo.jpg for offence ")
+                    print("STOP, you have violated the law!")
+                    filename = './traffic_publisher_photo.jpg'
+                    with open(filename, mode='rb') as file:
+                        img_data = file.read()
+                    enc_data = base64.b64encode(img_data).decode('utf-8')
+                    response["image"] = enc_data
                     signature = sign(str.encode(json.dumps(response)), private_key)
                     message = response | {'signature': signature.hex()}
                     topic="MotionCollisionSensor"
@@ -92,13 +92,13 @@ def motion_collision_loop(client, private_key):
                         print("Failed to send message to topic " + topic)
         
         if response["theDetection"]["type"] == "colision" and response["theDetection"]["value"] == True:
-            #take_picture("traffic_publisher_photo.jpg", "Check traffic_publisher_photo.jpg for accident ")
-            #print("There was an accident!")
-            #filename = './traffic_publisher_photo.jpg'
-            #with open(filename, mode='rb') as file:
-                #img_data = file.read()
-            #enc_data = base64.b64encode(img_data).decode('utf-8')
-            #response["image"] = enc_data
+            take_picture("traffic_publisher_photo.jpg", "Check traffic_publisher_photo.jpg for accident ")
+            print("There was an accident!")
+            filename = './traffic_publisher_photo.jpg'
+            with open(filename, mode='rb') as file:
+                img_data = file.read()
+            enc_data = base64.b64encode(img_data).decode('utf-8')
+            response["image"] = enc_data
                 
             signature = sign(str.encode(json.dumps(response)), private_key)
             message = response | {'signature': signature.hex()}

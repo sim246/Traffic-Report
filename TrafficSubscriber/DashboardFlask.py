@@ -77,15 +77,24 @@ def excludeKeysFromDict(dictObj, keysArray):
     return {x: dictObj[x] for x in dictObj if x not in keysArray}
 
 @app.route('/')
-def hello_world():
+def start():
     public_key = get_public_key()
     weather_data = get_weather()
     motion_collision_data = get_motion_collision()
-    if public_key != "":
-        if verify(bytes.fromhex(weather_data.get('signature')),
+    if public_key != None:
+        if weather_data != None:
+            if verify(bytes.fromhex(weather_data.get('signature')),
                                            str.encode(json.dumps(excludeKeysFromDict(weather_data, ['signature']))),
                                            public_key):
-            return render_template('index.html', motion_collision = motion_collision_data, weather = weather_data)
+                if motion_collision_data != None:
+                    if verify(bytes.fromhex(motion_collision_data.get('signature')),
+                                           str.encode(json.dumps(excludeKeysFromDict(motion_collision_data, ['signature']))),
+                                           public_key):
+                        return render_template('index.html', weather = weather_data, motion_collision = motion_collision_data)
+                else:
+                    return render_template('index.html', weather = weather_data)
+    else:
+        return render_template('wait.html')
 
 if __name__ == '__main__':
     client = mqtt.Client()
