@@ -1,6 +1,7 @@
 import base64
 import requests
 import json
+import jwt
 import time
 import datetime
 from random import randrange
@@ -130,8 +131,34 @@ def on_connect(client, userdata, flags, return_code):
     print("CONNACK received with code %s." % return_code)
     if return_code == 0:
         print("connected")
+        # Generate JWT token (exp 1h)
+        headers = {
+            "alg": "HS256",
+            "typ": "JWT"
+        }
+        expire_on = datetime.datetime.utcnow() + datetime.timedelta(hours=1)
+        payload = {
+            "sub": "client", 
+            "client": f"{client._client_id.decode('utf-8')}", 
+            "exp": expire_on.timestamp()
+        }
+        client.token = jwt.encode(payload=payload, key=SECRET, headers=headers)
+
     else:
         print("could not connect, return code:", return_code)
+        print("publisher could not connect, return code:", return_code)
+        headers = {
+            "alg": "HS256",
+            "typ": "JWT"
+        }
+        expire_on = datetime.datetime.utcnow()
+        payload = {
+            "sub": "invalid client", 
+            "client": f"{client._client_id}", 
+            "exp": expire_on.timestamp()
+        }
+        client.token = jwt.encode(payload=payload, key=SECRET, headers=headers)
+
 
 if __name__ == '__main__':
     print('Program is starting...')
