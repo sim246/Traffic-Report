@@ -1712,3 +1712,28 @@ To fix this, use `chmod 0700 /mosquitto/config/passwd`.
 1700968151: Client Client1 closed its connection.
 1700968153: Client auto-E3FE22D3-51BD-B30D-3CF6-477D918D4315 closed its connection.
 1700968318: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700969402: mosquitto version 2.0.18 starting
+1700969402: Config loaded from /mosquitto/config/mosquitto.conf.
+1700969402: Warning: File /mosquitto/config/passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwd`.
+1700969402: Opening ipv4 listen socket on port 1883.
+1700969402: Opening ipv6 listen socket on port 1883.
+1700969402: mosquitto version 2.0.18 running
+1700969423: New connection from 172.18.0.1:34418 on port 1883.
+1700969423: New client connected from 172.18.0.1:34418 as auto-7D752FFC-AF30-DE32-6B1B-924C47BCBF36 (p2, c1, k60, u'user1').
+1700969458: New connection from 172.18.0.1:51904 on port 1883.
+1700969458: New client connected from 172.18.0.1:51904 as Client1 (p2, c1, k60, u'user1').
+1700969458: New connection from 172.18.0.1:51920 on port 1883.
+1700969458: New client connected from 172.18.0.1:51920 as Client2 (p2, c1, k60, u'user2').
+1700969504: Client auto-7D752FFC-AF30-DE32-6B1B-924C47BCBF36 closed its connection.
+1700969509: Client Client2 closed its connection.
+1700969509: Client Client1 closed its connection.
+1700970052: New connection from 172.18.0.1:48058 on port 1883.
+1700970052: New client connected from 172.18.0.1:48058 as auto-1FB93312-9D5B-54A8-B2BC-49E7DD102853 (p2, c1, k60, u'user1').
+1700970058: New connection from 172.18.0.1:56988 on port 1883.
+1700970058: New client connected from 172.18.0.1:56988 as Client1 (p2, c1, k60, u'user1').
+1700970058: New connection from 172.18.0.1:56992 on port 1883.
+1700970058: New client connected from 172.18.0.1:56992 as Client2 (p2, c1, k60, u'user2').
+1700970079: Client auto-1FB93312-9D5B-54A8-B2BC-49E7DD102853 closed its connection.
+1700970081: Client Client2 closed its connection.
+1700970081: Client Client1 closed its connection.

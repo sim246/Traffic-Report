@@ -34,11 +34,11 @@ def test_verify_correct(read_keys_from_files):
 def test_verify_incorrect_signature(read_keys_from_files):
     verify_result = verify(b'not the signature', b"a message", read_keys_from_files[1])
     
-    assert verify_result == "The signature, the message or the Public Key is invalid"
+    assert verify_result == "The signature, the message, or the Public Key is invalid"
 
 def test_verify_incorrect_message(read_keys_from_files):
     signature = sign(b"wrong message", read_keys_from_files[0])
     
     verify_result = verify(signature, b"a message", read_keys_from_files[1])
     
-    assert verify_result == "The signature, the message or the Public Key is invalid"
+    assert verify_result == "The signature, the message, or the Public Key is invalid"
