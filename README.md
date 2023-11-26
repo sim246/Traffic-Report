@@ -1,37 +1,46 @@
 # Team assignment 2
 
+Follow these steps to set up the environment:
 
-clone the reposetory
-cd into reposetory
+Clone the Repository:
 
-run command:
-pip install -r requirements.txt
+    git clone [repository-url]
+    cd [repository-name]
 
-cd into WeatherForecast
-use sodu docker compose up -d
+Install Dependencies:
 
-cd back into project directory
+    pip install -r requirements.txt
 
-cd into MotionCollision
-use sodu docker compose up -d
+WeatherForecast Microservice:
 
-cd back into project directory
+    cd WeatherForecast
+    sudo docker-compose up -d
 
-cd into MQTT
-use sodu docker compose up -d
+MotionCollision Microservice:
 
-add users to MQTT:
-user1-password
-user2-password
-user3-password
+    cd ../MotionCollision
+    sudo docker-compose up -d
 
-cd back into project directory
+MQTT Microservice:
 
-cd into TrafficSubscriber
-run command:
-python3 DashboardFlask.py 
+    cd ../MQTT
+    sudo docker-compose up -d
 
-open a new consloe an cd into TrafficPublisher
-run command:
-python3 DashboardFlask.py 
+Add Users to MQTT:
+
+    user1: password
+    user2: password
+    user3: password
+
+TrafficSubscriber Microservice:
+
+    cd ../TrafficSubscriber
+    python3 DashboardFlask.py
+
+TrafficPublisher Microservice:
+
+    Open a new console
+
+    cd TrafficPublisher
+    python3 publisher.py
 
