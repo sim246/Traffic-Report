@@ -4,7 +4,10 @@ Project Title: Traffic Report
 
 Project Overview: A system that runs on the Raspberry Pi that manages weather and motion collision data. It also classifies infractions and displays then on a UI. 
 
-project Details: there is a Keys file that generates and keeps the keys. MotionCollision and WeatherForecast which build the apis, the MQTT that manages the publish/subscribe messageing service and, TrafficPublisher and TrafficSubscriber which are the subscriber and publisher.
+project Details: There in a Keys folder with a asymetric_keys that generates and keeps the keys. The MotionCollision and WeatherForecast folders contain the code which 
+builds the apis (Docker files, Controllers), the MQTT folder contains the service that manages the publish/subscribe messageing services and, the TrafficPublisher and 
+TrafficSubscriber folders contain the subscriber and publisher services. The Dashboard in the DashboardFlask also includes the subscriber code since it was simpler to have 
+both the code for the dashboaard and the code that retreaves the data together in one file.
 
 Follow these steps to set up the environment:
 
@@ -38,7 +41,7 @@ Add Users to MQTT:
     user2: password
     user3: password
 
-TrafficSubscriber Microservice:
+TrafficSubscriber Microservice (on same or different raspberry pi):
 
     cd ../TrafficSubscriber
     python3 DashboardFlask.py
