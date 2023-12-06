@@ -2,7 +2,8 @@
 
 Project Title: Traffic Report
 
-Project Overview: A system that runs on the Raspberry Pi that manages weather and motion collision data. It also classifies infractions and displays then on a UI. 
+Project Overview: A system that runs on the Raspberry Pi that manages weather and motion collision data. It recives information from a publisher and displays the weather 
+and the infractions after classifing then. It also verifies subscribers' validity using tokens and asynchronous  keys.
 
 project Details: There in a Keys folder with a asymetric_keys that generates and keeps the keys. The MotionCollision and WeatherForecast folders contain the code which 
 builds the apis (Docker files, Controllers), the MQTT folder contains the service that manages the publish/subscribe messageing services and, the TrafficPublisher and 
