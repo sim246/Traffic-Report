@@ -1,4 +1,5 @@
 # Team assignment 2
+Team: Simona Dragomir, Charles-Alexandre Bouchard
 
 Project Title: Traffic Report
 
