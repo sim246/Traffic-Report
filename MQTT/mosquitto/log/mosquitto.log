@@ -1808,3 +1808,18 @@ To fix this, use `chmod 0700 /mosquitto/config/passwd`.
 1701962794: Opening ipv4 listen socket on port 1883.
 1701962794: Opening ipv6 listen socket on port 1883.
 1701962794: mosquitto version 2.0.18 running
+1701964595: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1701966059: New connection from 172.18.0.1:60586 on port 1883.
+1701966059: New client connected from 172.18.0.1:60586 as auto-579D19B6-3F2E-33EF-026F-5939F0FFCA3A (p2, c1, k60, u'user1').
+1701966207: Client auto-579D19B6-3F2E-33EF-026F-5939F0FFCA3A closed its connection.
+1701966396: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1701966436: New connection from 172.18.0.1:33918 on port 1883.
+1701966436: New client connected from 172.18.0.1:33918 as auto-339689E6-FFF5-EBB6-4414-F6F5FCC9134A (p2, c1, k60, u'user1').
+1701966447: New connection from 172.18.0.1:40330 on port 1883.
+1701966447: New client connected from 172.18.0.1:40330 as Client1 (p2, c1, k60, u'user1').
+1701966447: New connection from 172.18.0.1:40340 on port 1883.
+1701966447: New client connected from 172.18.0.1:40340 as Client2 (p2, c1, k60, u'user2').
+1701966461: Client auto-339689E6-FFF5-EBB6-4414-F6F5FCC9134A closed its connection.
+1701966467: Client Client2 closed its connection.
+1701966467: Client Client1 closed its connection.
+1701968197: Saving in-memory database to /mosquitto/data//mosquitto.db.
