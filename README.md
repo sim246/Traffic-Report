@@ -25,19 +25,25 @@ Install Dependencies:
 WeatherForecast Microservice:
 
     cd WeatherForecast
-    sudo docker-compose up -d
+    sudo docker compose up -d
 
 MotionCollision Microservice:
 
     cd ../MotionCollision
-    sudo docker-compose up -d
+    sudo docker compose up -d
 
 MQTT Microservice:
 
     cd ../MQTT
-    sudo docker-compose up -d
+    sudo docker compose up -d
 
 Add Users to MQTT:
+
+    sudo docker exec -it mosquitto_broker sh
+    mosquitto_passwd -c /mosquitto/config/passwd user1
+    mosquitto_passwd /mosquitto/config/passwd user2
+    mosquitto_passwd /mosquitto/config/passwd user3
+    exit
 
     user1: password
     user2: password

@@ -1801,3 +1801,10 @@ To fix this, use `chmod 0700 /mosquitto/config/passwd`.
 1700972225: Client auto-5DD4E71B-B162-2CCC-14E7-E39D2BB8528C closed its connection.
 1700972232: Client Client2 closed its connection.
 1700972232: Client Client1 closed its connection.
+1701962794: mosquitto version 2.0.18 starting
+1701962794: Config loaded from /mosquitto/config/mosquitto.conf.
+1701962794: Warning: File /mosquitto/config/passwd has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwd`.
+1701962794: Opening ipv4 listen socket on port 1883.
+1701962794: Opening ipv6 listen socket on port 1883.
+1701962794: mosquitto version 2.0.18 running
