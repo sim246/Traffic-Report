@@ -52,7 +52,7 @@ Add Users to MQTT:
 TrafficSubscriber Microservice (on same or different raspberry pi):
 
     cd ../TrafficSubscriber
-    python3 DashboardFlask.py
+    python3 DashboardFlask.py (if on different raspberry change localhost to other raspberry's ip address)
 
 TrafficPublisher Microservice:
 
